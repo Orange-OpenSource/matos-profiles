@@ -1,0 +1,3 @@
+The modules uses the following library:
+*  sqlite-jdbc - Copyright (C) Xerial under the terms of the Apache Software License version 2.0
+

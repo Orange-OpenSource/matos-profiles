@@ -1,0 +1,18 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.orange.matos</groupId>
+  <artifactId>matos-stubs</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+
+  <modules>
+	<module>matos-annotations</module>
+	<module>matos-stub-generator</module>
+	<module>matos-midp-msa</module>
+	<module>matos-android-base</module>
+	<module>matos-android</module>
+	<module>matos-android-database</module>
+  </modules>
+</project>
+
