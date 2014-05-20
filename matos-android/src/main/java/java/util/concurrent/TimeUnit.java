@@ -1,0 +1,76 @@
+package java.util.concurrent;
+
+/*
+ * #%L
+ * Matos
+ * $Id:$
+ * $HeadURL:$
+ * %%
+ * Copyright (C) 2010 - 2014 Orange SA
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+
+
+public enum TimeUnit
+{
+  // Enum Constants
+
+  NANOSECONDS()
+, MICROSECONDS()
+, MILLISECONDS()
+, SECONDS()
+, MINUTES()
+, HOURS()
+, DAYS()
+;
+  // Fields
+
+  // Constructors
+
+  private TimeUnit(){
+  }
+  // Methods
+
+  public void sleep(long arg1) throws java.lang.InterruptedException{
+  }
+  public long toNanos(long arg1){
+    return 0l;
+  }
+  public long toMillis(long arg1){
+    return 0l;
+  }
+  public long convert(long arg1, TimeUnit arg2){
+    return 0l;
+  }
+  public long toMicros(long arg1){
+    return 0l;
+  }
+  public long toSeconds(long arg1){
+    return 0l;
+  }
+  public long toMinutes(long arg1){
+    return 0l;
+  }
+  public long toHours(long arg1){
+    return 0l;
+  }
+  public long toDays(long arg1){
+    return 0l;
+  }
+  public void timedWait(java.lang.Object arg1, long arg2) throws java.lang.InterruptedException{
+  }
+  public void timedJoin(java.lang.Thread arg1, long arg2) throws java.lang.InterruptedException{
+  }
+}

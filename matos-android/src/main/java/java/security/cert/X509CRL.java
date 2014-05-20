@@ -1,0 +1,62 @@
+package java.security.cert;
+
+/*
+ * #%L
+ * Matos
+ * $Id:$
+ * $HeadURL:$
+ * %%
+ * Copyright (C) 2010 - 2014 Orange SA
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+
+
+public abstract class X509CRL
+  extends CRL  implements X509Extension
+{
+  // Constructors
+
+  protected X509CRL(){
+    super((java.lang.String) null);
+  }
+  // Methods
+
+  public boolean equals(java.lang.Object arg1){
+    return false;
+  }
+  public int hashCode(){
+    return 0;
+  }
+  public abstract byte [] getSignature();
+  public abstract byte [] getEncoded() throws CRLException;
+  public abstract void verify(java.security.PublicKey arg1) throws CRLException, java.security.NoSuchAlgorithmException, java.security.InvalidKeyException, java.security.NoSuchProviderException, java.security.SignatureException;
+  public abstract void verify(java.security.PublicKey arg1, java.lang.String arg2) throws CRLException, java.security.NoSuchAlgorithmException, java.security.InvalidKeyException, java.security.NoSuchProviderException, java.security.SignatureException;
+  public abstract java.security.Principal getIssuerDN();
+  public abstract int getVersion();
+  public javax.security.auth.x500.X500Principal getIssuerX500Principal(){
+    return (javax.security.auth.x500.X500Principal) null;
+  }
+  public abstract java.util.Date getThisUpdate();
+  public abstract java.util.Date getNextUpdate();
+  public abstract X509CRLEntry getRevokedCertificate(java.math.BigInteger arg1);
+  public X509CRLEntry getRevokedCertificate(X509Certificate arg1){
+    return (X509CRLEntry) null;
+  }
+  public abstract java.util.Set<? extends X509CRLEntry> getRevokedCertificates();
+  public abstract byte [] getTBSCertList() throws CRLException;
+  public abstract java.lang.String getSigAlgName();
+  public abstract java.lang.String getSigAlgOID();
+  public abstract byte [] getSigAlgParams();
+}
