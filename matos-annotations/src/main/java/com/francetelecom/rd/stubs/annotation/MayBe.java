@@ -30,7 +30,7 @@ import java.lang.annotation.Target;
 /**
  * Indicate that the class of an element may be one of the following. Used for arguments of callbacks
  * and return types.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

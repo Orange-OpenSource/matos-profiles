@@ -30,7 +30,7 @@ import java.lang.reflect.Method;
 /**
  * Alternative annotations where we use the annotations of the alternative element if they
  * exist.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public class AlternativeReplacedAnnotations implements AlternativeAnnotations {

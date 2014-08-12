@@ -25,7 +25,7 @@ package com.francetelecom.rd.stubs;
 
 /**
  * A Token class for the specific stubs constructor.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public class Token {

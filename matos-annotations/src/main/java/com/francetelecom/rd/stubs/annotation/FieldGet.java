@@ -29,7 +29,7 @@ import java.lang.annotation.Target;
 
 /**
  * Access to a field
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

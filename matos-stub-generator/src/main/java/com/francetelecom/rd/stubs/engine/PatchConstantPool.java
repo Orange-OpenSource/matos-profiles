@@ -35,7 +35,7 @@ import java.util.regex.Pattern;
  * Code patcher that relocate the code in a sub package. Works for all classes but
  * String and Object. It is important to choose prefix so that there is no risk of
  * conflict.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public class PatchConstantPool {

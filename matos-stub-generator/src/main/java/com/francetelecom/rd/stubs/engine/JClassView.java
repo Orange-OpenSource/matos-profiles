@@ -72,7 +72,7 @@ import javax.swing.tree.TreePath;
 
 /**
  * A swing tree that shows what has been achieved for annotations.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @SuppressWarnings("serial")
@@ -110,7 +110,7 @@ public class JClassView extends JTree {
   /**
    * Reimplementation of BasicTreeUI to make JTree take all the space
    * available for its width.
-   * @author tkdn3113
+   * @author Laurent Sebag
    *
    */
   public static class ExpandedTreeUI extends BasicTreeUI {
@@ -154,7 +154,7 @@ public class JClassView extends JTree {
   
   /**
    * Tells how to display each row in the tree.
-   * @author piac6784
+   * @author Pierre Cregut
    *
    */
   private static class Renderer extends DefaultTreeCellRenderer {
@@ -260,7 +260,7 @@ public class JClassView extends JTree {
   /**
    * How to react to mouse event (use button 2 so we do not rely on the tree event listener
    * interface) 
-   * @author piac6784
+   * @author Pierre Cregut
    *
    */
   transient private MouseListener ml =

@@ -29,7 +29,7 @@ import java.lang.annotation.Target;
 
 /**
  * Several fields in the same class.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

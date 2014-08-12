@@ -29,7 +29,7 @@ import java.lang.annotation.Target;
 
 /**
  * Several ArgsRule on the same component.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 

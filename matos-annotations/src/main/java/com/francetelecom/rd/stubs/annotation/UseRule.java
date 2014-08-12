@@ -30,7 +30,7 @@ import java.lang.annotation.Target;
 /**
  * A matos analysis rule that counts the occurence of a method.
  * 
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

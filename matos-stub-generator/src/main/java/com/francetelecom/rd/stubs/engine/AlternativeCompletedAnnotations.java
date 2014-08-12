@@ -31,7 +31,7 @@ import java.util.Arrays;
 /**
  * Alternative annotations where we add a new annotation if the element is found in the alternative
  * implementation. 
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public class AlternativeCompletedAnnotations  implements AlternativeAnnotations{

@@ -31,7 +31,7 @@ import java.lang.annotation.Target;
  * This annotation is used to add arbitrary code to a stub element. If used
  * at the level of a class or interface, it should contain complete declarations.
  *  
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

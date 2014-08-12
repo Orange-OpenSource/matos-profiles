@@ -25,7 +25,7 @@ package com.francetelecom.rd.stubs.engine;
 
 /**
  * String utility methods.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public class StringUtil {

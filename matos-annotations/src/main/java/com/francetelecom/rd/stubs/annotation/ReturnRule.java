@@ -31,7 +31,7 @@ import java.lang.annotation.Target;
  * A matos analysis rule that analyze the potential values returned by a method
  * (more or less ArgsRule(arg=-1))
  * 
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

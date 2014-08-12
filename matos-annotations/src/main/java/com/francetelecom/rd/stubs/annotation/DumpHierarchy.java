@@ -29,7 +29,7 @@ import java.lang.annotation.Target;
 
 /**
  * Dumps all the implemeters of a given class in a property.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 

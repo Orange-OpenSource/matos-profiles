@@ -40,11 +40,11 @@ import java.util.Map;
 
 /**
  * Interface with a database containing all the versions of Android.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 /**
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public class VersionDatabase {

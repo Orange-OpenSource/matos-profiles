@@ -46,7 +46,7 @@ import java.util.regex.Pattern;
  * as constants (eg. with the ldc machine instruction).
  * Object which is the only allowed root class. The limitation on Object could be overcomed
  * by giving an ancestor to the relocated Object.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 
@@ -187,11 +187,11 @@ public class RelocatingClassLoader extends ClassLoader {
 	public static void main (String [] args) throws Exception {
 		String prefix = "oLaB";
 		String [] jars = new String [] {
-			// "/home/piac6784/Android/android.jar"
-			"/home/piac6784/Android/core.jar",
-			"/home/piac6784/Android/framework.jar",
-			"/home/piac6784/Android/services.jar",
-			"/home/piac6784/Android/ext.jar"
+			// "/home/Pierre Cregut/Android/android.jar"
+			"/home/Pierre Cregut/Android/core.jar",
+			"/home/Pierre Cregut/Android/framework.jar",
+			"/home/Pierre Cregut/Android/services.jar",
+			"/home/Pierre Cregut/Android/ext.jar"
 		};
 		RelocatingClassLoader cl = new RelocatingClassLoader(jars, prefix);
 		ReflexUtil rf = new ReflexUtil(prefix, null, "");

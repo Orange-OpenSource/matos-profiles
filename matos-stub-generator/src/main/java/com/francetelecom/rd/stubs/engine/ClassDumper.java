@@ -49,12 +49,12 @@ import java.util.regex.Pattern;
 /**
  * This class pretty prints the empty stub of a loaded class. It should perform
  * nothing and real stubs must be implemented by overloading this class.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 
 /**
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public class ClassDumper {

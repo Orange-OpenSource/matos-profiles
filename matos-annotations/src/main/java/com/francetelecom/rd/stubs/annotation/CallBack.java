@@ -29,7 +29,7 @@ import java.lang.annotation.Target;
 
 /**
  * Annotation that identifies a user method that can be called by the system.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

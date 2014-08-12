@@ -25,7 +25,7 @@ package com.francetelecom.rd.stubs.engine;
 /**
  * Various string constants.
  * 
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public class EngineConstant {

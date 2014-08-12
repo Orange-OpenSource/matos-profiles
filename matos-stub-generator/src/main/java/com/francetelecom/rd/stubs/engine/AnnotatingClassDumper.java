@@ -41,11 +41,11 @@ import java.util.Properties;
 import java.util.Set;
 
 /**
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 /**
- * @author piac6784
+ * @author Pierre Cregut
  * 
  */
 public class AnnotatingClassDumper extends ClassDumper {

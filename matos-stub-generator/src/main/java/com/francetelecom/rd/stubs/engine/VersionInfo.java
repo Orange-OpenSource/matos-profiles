@@ -33,7 +33,7 @@ import com.francetelecom.rd.stubs.engine.Node.ELEMENT_VERSION_COLORS;
 import com.francetelecom.rd.stubs.engine.Node.PACKAGE_VERSION_COLORS;
 
 /**
- * @author Laurent Sebag et piac6784
+ * @author Laurent Sebag et Pierre Cregut
  *
  * All that is necessary to handle version informations in nodes. Implemented as two concrete classes tied
  * by an abstract class.

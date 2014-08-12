@@ -29,7 +29,7 @@ import java.lang.reflect.Method;
 
 /**
  * This interface describes an annotation translater. 
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public interface AlternativeAnnotations {

@@ -34,7 +34,7 @@ import java.util.List;
 
 /**
  * Handle the generation of XML rule files.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public class RuleGenerator {

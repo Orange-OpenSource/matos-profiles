@@ -30,7 +30,7 @@ import java.lang.annotation.Target;
 /**
  * This annotation is used to tell Matos that an element is not visible in a given context. 
  *  
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

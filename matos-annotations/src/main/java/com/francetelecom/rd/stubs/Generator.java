@@ -26,7 +26,7 @@ package com.francetelecom.rd.stubs;
 /**
  * Generator for primitive values. Use native methods so that 
  * the static analysis does not believe it knows the value.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public class Generator {

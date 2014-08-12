@@ -30,7 +30,7 @@ import java.util.regex.Pattern;
 
 /**
  * A lot of utility functions to relocate names, find objects, etc.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public class ReflexUtil {

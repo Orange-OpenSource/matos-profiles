@@ -34,7 +34,7 @@ import java.util.Map;
 /**
  * The goal of this class is to patch native methods into stubs raising an
  * exception.  
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public class PatchNativeMethod {

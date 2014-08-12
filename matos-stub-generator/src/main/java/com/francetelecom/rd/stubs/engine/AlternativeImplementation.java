@@ -35,7 +35,7 @@ import java.util.regex.Pattern;
  * jar. It is mainly used when the representation of the stubs is changed or when the
  * version of the profile dumped is changed. 
  * 
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public class AlternativeImplementation {

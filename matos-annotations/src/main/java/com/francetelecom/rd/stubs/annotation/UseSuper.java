@@ -31,7 +31,7 @@ import java.lang.annotation.Target;
  * An annotation that tells that as far as the stub is concerned, we can use the implementation
  * of super. It is better to use this annotation rather than removing the method because it is
  * preserved when we update the version of the library we are analyzing.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

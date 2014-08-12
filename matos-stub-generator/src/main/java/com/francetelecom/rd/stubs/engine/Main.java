@@ -41,7 +41,7 @@ import java.util.Set;
  * <li>-d for the path to the directory where the java code is produced.
  * </ul>
  * 
- * @author piac6784
+ * @author Pierre Cregut
  */
 public class Main {
     final static String OTHER_PREFIX = "aNnOtPrEfIxOrAnGe";

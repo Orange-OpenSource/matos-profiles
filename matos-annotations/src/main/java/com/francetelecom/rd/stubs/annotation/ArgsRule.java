@@ -33,7 +33,7 @@ import java.lang.annotation.Target;
  * 
  * Caveat: we could use annotations instead of the args array, but we need base and
  * return value (0 and -1) and we may want to have several rules on the same method.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

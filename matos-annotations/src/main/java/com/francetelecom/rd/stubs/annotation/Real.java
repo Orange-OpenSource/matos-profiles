@@ -29,7 +29,7 @@ import java.lang.annotation.Target;
 
 /**
  * To specify a name for the implementation of an interface.s
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

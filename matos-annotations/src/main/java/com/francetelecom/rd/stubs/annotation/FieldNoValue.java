@@ -30,7 +30,7 @@ import java.lang.annotation.Target;
 /**
  * Annotation that tells that this field should not have a default value (set by constructor for final fields).
  * 
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

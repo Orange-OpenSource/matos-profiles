@@ -30,7 +30,7 @@ import java.lang.annotation.Target;
 /**
  * Tells that the values of a class are all stored in an accumulator used when we
  * need a witness of this type.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 

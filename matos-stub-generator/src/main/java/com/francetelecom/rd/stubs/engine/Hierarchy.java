@@ -33,7 +33,7 @@ import java.util.Map;
  * It maintains the backward links giving for example the subclass of a class or the
  * implementors of an interface and provides utility functions to navigate the 
  * hierarchy.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 public class Hierarchy {

@@ -32,7 +32,7 @@ import java.lang.annotation.Target;
  * be later called by the system. If the argument is the
  * base (this), we annotate the method or constructor that carry it.
  * 
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

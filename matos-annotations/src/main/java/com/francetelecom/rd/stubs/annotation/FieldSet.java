@@ -30,7 +30,7 @@ import java.lang.annotation.Target;
 /**
  * Setter for a field. If the value used is the base (this), the annotation is put on the method
  * or constructor.
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

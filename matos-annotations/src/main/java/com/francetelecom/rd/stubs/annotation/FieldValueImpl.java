@@ -32,7 +32,7 @@ import java.lang.annotation.Target;
  * with a specific class that extends the declared type. This class is unique to
  * the field and so identifies its content during points-to analysis.
  * 
- * @author piac6784
+ * @author Pierre Cregut
  *
  */
 @Retention(RetentionPolicy.RUNTIME)
