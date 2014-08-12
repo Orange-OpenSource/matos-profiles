@@ -66,35 +66,35 @@
 						<configuration>
 							<tasks>
 								<echo message="GENERATING ANNOTATED" />
-								<mkdir dir="${project.build.directory}/annotated" />
-								<javac srcdir="${basedir}/src/main/java" classpath="${com.orange.matos:matos-annotations:jar}"
+								<mkdir dir="${project.build.directory}${file.separator}annotated" />
+								<javac srcdir="${basedir}${file.separator}src${file.separator}main${file.separator}java" classpath="${com.orange.matos:matos-annotations:jar}"
 									bootclasspath="${com.orange.matos:matos-android-base:jar}"
-									destdir="${project.build.directory}/annotated" />
-								<jar basedir="${project.build.directory}/annotated"
-									destfile="${project.build.directory}/annotated.jar" />
+									destdir="${project.build.directory}${file.separator}annotated" />
+								<jar basedir="${project.build.directory}${file.separator}annotated"
+									destfile="${project.build.directory}${file.separator}annotated.jar" />
 								<echo message="PROCESSING" />
 								<java
-									classpath="${com.orange.matos:matos-stub-generator:jar}:${org.xerial:sqlite-jdbc:jar}"
+									classpath="${com.orange.matos:matos-stub-generator:jar}${path.separator}${org.xerial:sqlite-jdbc:jar}"
 									classname="com.francetelecom.rd.stubs.engine.Main" fork="true">
 									<arg value="-d" />
-									<arg value="${project.build.directory}/finalSrc" />
+									<arg value="${project.build.directory}${file.separator}finalSrc" />
 									<arg value="-r" />
-									<arg value="${basedir}/src/main/config/settings.xml" />
+									<arg value="${basedir}${file.separator}src${file.separator}main${file.separator}config${file.separator}settings.xml" />
 									<arg value="-jars" />
 									<arg
-										value="${project.build.directory}/annotated.jar:${com.orange.matos:matos-annotations:jar}" />
+										value="${project.build.directory}${file.separator}annotated.jar${path.separator}${com.orange.matos:matos-annotations:jar}" />
 								</java>
 								<java
-									classpath="${com.orange.matos:matos-stub-generator:jar}:${org.xerial:sqlite-jdbc:jar}"
+									classpath="${com.orange.matos:matos-stub-generator:jar}${path.separator}${org.xerial:sqlite-jdbc:jar}"
 									classname="com.francetelecom.rd.stubs.engine.Main" fork="true">
 									<arg value="-x" />
-									<arg value="${project.build.directory}/rules.xml" />
+									<arg value="${project.build.directory}${file.separator}rules.xml" />
 									<arg value="-w" />
-									<arg value="${project.build.directory}/structure.xml" />
+									<arg value="${project.build.directory}${file.separator}structure.xml" />
 
 									<arg value="-jars" />
 									<arg
-										value="${project.build.directory}/annotated.jar:${com.orange.matos:matos-annotations:jar}" />
+										value="${project.build.directory}${file.separator}annotated.jar${path.separator}${com.orange.matos:matos-annotations:jar}" />
 								</java>
 							</tasks>
 						</configuration>
