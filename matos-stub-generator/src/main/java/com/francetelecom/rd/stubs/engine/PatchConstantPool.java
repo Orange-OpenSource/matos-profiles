@@ -54,7 +54,7 @@ public class PatchConstantPool {
 	
 	final static String [] RESERVED_CLASS = {
 		"java/lang/Object", "java/lang/Class", "java/lang/Enum", "java/lang/String", "java/lang/Throwable",
-		"java/io/Serializable",
+		"java/io/Serializable", "java/lang/Comparable", "java/lang/CharSequence",
 		"java/lang/annotation/Annotation","java/lang/annotation/RetentionPolicy", "java/lang/annotation/Retention",
 		"java/lang/annotation/Target","java/lang/annotation/ElementType"
 	};
