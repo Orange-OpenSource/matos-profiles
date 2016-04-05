@@ -30,6 +30,7 @@
 	</dependencies>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<compiler.version>1.6</compiler.version>
 	</properties>
 	<build>
 		<sourceDirectory>${project.build.directory}/finalSrc</sourceDirectory>
@@ -39,8 +40,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>${compiler.version}</source>
+					<target>${compiler.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -67,7 +68,7 @@
 							<tasks>
 								<echo message="GENERATING ANNOTATED" />
 								<mkdir dir="${project.build.directory}${file.separator}annotated" />
-								<javac srcdir="${basedir}${file.separator}src${file.separator}main${file.separator}java" classpath="${com.orange.matos:matos-annotations:jar}"
+								<javac source="${compiler.version}" target="${compiler.version}" srcdir="${basedir}${file.separator}src${file.separator}main${file.separator}java" classpath="${com.orange.matos:matos-annotations:jar}"
 									bootclasspath="${com.orange.matos:matos-android-base:jar}"
 									destdir="${project.build.directory}${file.separator}annotated" />
 								<jar basedir="${project.build.directory}${file.separator}annotated"
