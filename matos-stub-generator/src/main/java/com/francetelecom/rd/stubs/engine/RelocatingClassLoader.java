@@ -187,11 +187,10 @@ public class RelocatingClassLoader extends ClassLoader {
 	public static void main (String [] args) throws Exception {
 		String prefix = "oLaB";
 		String [] jars = new String [] {
-			// "/home/Pierre Cregut/Android/android.jar"
-			"/home/Pierre Cregut/Android/core.jar",
-			"/home/Pierre Cregut/Android/framework.jar",
-			"/home/Pierre Cregut/Android/services.jar",
-			"/home/Pierre Cregut/Android/ext.jar"
+			"Android/core.jar",
+			"Android/framework.jar",
+			"Android/services.jar",
+			"Android/ext.jar"
 		};
 		RelocatingClassLoader cl = new RelocatingClassLoader(jars, prefix);
 		ReflexUtil rf = new ReflexUtil(prefix, null, "");
