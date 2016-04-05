@@ -6,7 +6,7 @@ package com.francetelecom.rd.stubs.engine;
  * $Id:$
  * $HeadURL:$
  * %%
- * Copyright (C) 2008 - 2014 Orange SA
+ * Copyright (C) 2008 - 2015 Orange SA
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -228,7 +228,7 @@ public class ClassDumper {
 			if (classType.isArray()) { 
 				type(out,classType.getComponentType(),authParams, typEnv);
 				out.print(" []");
-			} else if (isInvisible(classType)) {
+			} else if (!neededClasses.contains(classType) && isInvisible(classType)) {
 				type(out,classType.getSuperclass(), authParams, typEnv);
 			} else out.print(shorten(classType.getName()));	
 		}
@@ -475,10 +475,11 @@ public class ClassDumper {
 			System.err.println(rf.restoreString("TO KEEP FOR " + clazz + " : " + sup));
 		Set <Type> itfsRaw = new HashSet <Type>();
 		itfsRaw.addAll(Arrays.asList(clazz.getGenericInterfaces()));
+		/*
 		while(baseSuper.getSuperclass() != null && isInvisible(baseSuper.getSuperclass())) {
 			baseSuper = baseSuper.getSuperclass();
 			itfsRaw.addAll(Arrays.asList(baseSuper.getGenericInterfaces()));
-		}
+		} */
 		Type superClassType = baseSuper.getGenericSuperclass();
 		if (superClassType != null && superClassType != OBJECT_CLASS && !isEnum) {
 			
@@ -532,7 +533,7 @@ public class ClassDumper {
 	}
 
 	/**
-	 * Output all the subclasses of a class
+	 * Output all the classes contained in a given class
 	 * @param out output stream
 	 * @param classes the array of subclasses
 	 */
@@ -642,7 +643,7 @@ public class ClassDumper {
 		List <Method> result = new ArrayList<Method>();
 		for (Method method: methods) {
 			Class <?> declaring = method.getDeclaringClass();
-			if (declaring != c && isInvisible(declaring)) {
+			if (declaring != c && !neededClasses.contains(declaring) && isInvisible(declaring)) {
 				result.add(method);
 			}
 		}
@@ -826,7 +827,7 @@ public class ClassDumper {
 		Class<?> superclass = constructor.getDeclaringClass();
 		do {
 			superclass = superclass.getSuperclass();
-		} while (isInvisible(superclass));
+		} while (!neededClasses.contains(superclass) && isInvisible(superclass));
 		Class<?> [] exceptions = constructor.getExceptionTypes();
 		if (superclass == OBJECT_CLASS) return;
 		if (superclass == ENUM_CLASS) return;
@@ -1072,7 +1073,7 @@ public class ClassDumper {
 		if(typeName.equals("void")) return;
 		indent(out);
 		out.print("return ");
-		dumpDefaultValue(out,returnType, null);
+		dumpDefaultValue(out,returnType, typeEnv);
 		out.println(";");
 	}
 	
