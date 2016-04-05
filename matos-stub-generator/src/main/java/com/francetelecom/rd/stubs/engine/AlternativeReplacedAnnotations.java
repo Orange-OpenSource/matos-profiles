@@ -6,7 +6,7 @@ package com.francetelecom.rd.stubs.engine;
  * $Id:$
  * $HeadURL:$
  * %%
- * Copyright (C) 2008 - 2014 Orange SA
+ * Copyright (C) 2008 - 2015 Orange SA
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,11 +26,13 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Alternative annotations where we use the annotations of the alternative element if they
  * exist.
- * @author Pierre Cregut
+ * @author piac6784
  *
  */
 public class AlternativeReplacedAnnotations implements AlternativeAnnotations {
@@ -52,7 +54,9 @@ public class AlternativeReplacedAnnotations implements AlternativeAnnotations {
 			if (altM == null) {
 				return m.getDeclaredAnnotations();
 			}
-			else return altM.getDeclaredAnnotations();
+			else {
+			    return merge(m.getDeclaredAnnotations(), altM.getDeclaredAnnotations());
+			}
 		}
 	}
 
@@ -64,7 +68,7 @@ public class AlternativeReplacedAnnotations implements AlternativeAnnotations {
 			if (altM == null) {
 				return m.getParameterAnnotations();
 			}
-			else return altM.getParameterAnnotations();
+			else return merge(m.getParameterAnnotations(), altM.getParameterAnnotations());
 		}
 	}
 
@@ -74,7 +78,7 @@ public class AlternativeReplacedAnnotations implements AlternativeAnnotations {
 		else {
 			Class<?> altC = altImplem.findEquivalent(c);
 			if (altC == null) return c.getDeclaredAnnotations();
-			else return altC.getDeclaredAnnotations();
+			else return merge(c.getDeclaredAnnotations(), altC.getDeclaredAnnotations());
 		}
 	}
 
@@ -84,7 +88,7 @@ public class AlternativeReplacedAnnotations implements AlternativeAnnotations {
 		else {
 			Constructor<?> altC = altImplem.findEquivalent(c);
 			if (altC == null) return c.getDeclaredAnnotations();
-			else return altC.getDeclaredAnnotations();
+			else return merge(c.getDeclaredAnnotations(), altC.getDeclaredAnnotations());
 		}
 	}
 
@@ -94,7 +98,7 @@ public class AlternativeReplacedAnnotations implements AlternativeAnnotations {
 		else {
 			Constructor<?> altC = altImplem.findEquivalent(c);
 			if (altC == null) return c.getParameterAnnotations();
-			else return altC.getParameterAnnotations();
+			else return merge(c.getParameterAnnotations(), altC.getParameterAnnotations());
 		}
 	}
 
@@ -104,8 +108,25 @@ public class AlternativeReplacedAnnotations implements AlternativeAnnotations {
 		else {
 			Field altM = altImplem.findEquivalent(m);
 			if (altM == null) return m.getDeclaredAnnotations();
-			else return altM.getDeclaredAnnotations();
+			else return merge (m.getDeclaredAnnotations(), altM.getDeclaredAnnotations());
 		}
+	}
+	
+	/** Merge two sets of annotations. orig has priority. 
+	 * This will only work on Java < 8 where there is a single instance per annotation point 
+	 */
+	private Annotation [] merge(Annotation [] orig, Annotation [] alter) {
+	    Map<Class<? extends Annotation>, Annotation> buf = new HashMap<Class<? extends Annotation>, Annotation>();
+        for(Annotation a: alter) { buf.put(a.getClass(), a); }
+        for(Annotation a: orig) { buf.put(a.getClass(), a); }
+	    return buf.values().toArray(new Annotation [0]);
+	}
+	
+	private Annotation [] [] merge(Annotation [][] orig, Annotation [][] alter) {
+	    if (orig.length != alter.length) return orig;
+	    Annotation [] [] result = new Annotation[orig.length][];
+	    for(int i=0; i < orig.length; i++) result[i] = merge(orig[i], alter[i]);
+	    return result;
 	}
 
 }
