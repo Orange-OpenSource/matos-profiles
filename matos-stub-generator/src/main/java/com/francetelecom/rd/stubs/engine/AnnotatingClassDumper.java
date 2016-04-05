@@ -6,7 +6,7 @@ package com.francetelecom.rd.stubs.engine;
  * $Id:$
  * $HeadURL:$
  * %%
- * Copyright (C) 2008 - 2014 Orange SA
+ * Copyright (C) 2008 - 2015 Orange SA
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -41,11 +42,11 @@ import java.util.Properties;
 import java.util.Set;
 
 /**
- * @author Pierre Cregut
+ * @author piac6784
  *
  */
 /**
- * @author Pierre Cregut
+ * @author piac6784
  * 
  */
 public class AnnotatingClassDumper extends ClassDumper {
@@ -147,6 +148,15 @@ public class AnnotatingClassDumper extends ClassDumper {
 		return true;
 	}
 
+	private <T> T[] sort(T [] array) {
+		Comparator <Object> generic = new Comparator () {
+			@Override
+			public int compare(Object o1, Object o2) { return o1.toString().compareTo(o2.toString()); } 
+		}; 
+		Arrays.sort(array, generic);
+		return array;
+	}
+
 	/**
 	 * Dumps the fields added for the annotations.
 	 * 
@@ -186,13 +196,13 @@ public class AnnotatingClassDumper extends ClassDumper {
 			out.println(";");
 		}
 
-		for (Method m : c.getDeclaredMethods()) {
+		for (Method m : sort(c.getDeclaredMethods())) {
 			Annotation[][] paramAnnotsArray = m.getParameterAnnotations();
 			Type[] paramTypes = m.getGenericParameterTypes();
 			dumpAddedFields(out, fields, paramTypes, paramAnnotsArray, (m.getModifiers() & Modifier.STATIC) != 0);
 		}
 
-		for (Constructor<?> co : c.getDeclaredConstructors()) {
+		for (Constructor<?> co : sort(c.getDeclaredConstructors())) {
 			Annotation[][] paramAnnotsArray = co.getParameterAnnotations();
 			Type[] paramTypes = co.getGenericParameterTypes();
 			dumpAddedFields(out, fields, paramTypes, paramAnnotsArray, false);
@@ -249,7 +259,7 @@ public class AnnotatingClassDumper extends ClassDumper {
 		indent(out);
 		out.print("public ");
 		out.print(classname.substring(classname.lastIndexOf('.') + 1));
-		out.print("(" + tokenClass + " arg0) {");
+		out.print("(" + tokenClass + " arg0)    {");
 		Class<?> superClass = c.getSuperclass();
 		if (rf.handledClass(superClass)) {
 			beginIndent();
@@ -487,9 +497,9 @@ public class AnnotatingClassDumper extends ClassDumper {
 			indent(out);
 			// I do not understand why I need this explicit coercion.
 			if (method.getGenericReturnType() instanceof TypeVariable<?>) {
-				out.append("return (").append(
-						method.getGenericReturnType().toString()).append(") ")
-						.append(resultContent).append(";\n");
+				out.append("return (");
+				type(out, method.getGenericReturnType(), true, typeEnv );
+				out.append(") ").append(resultContent).append(";\n");
 			} else {
 				out.append("return ").append(resultContent).append(";\n");
 			}
@@ -880,11 +890,11 @@ public class AnnotatingClassDumper extends ClassDumper {
 			indent(out);
 			String shortname = classname
 					.substring(classname.lastIndexOf('.') + 1);
-			out.print("public class ");
+			out.print("public /* */ class ");
 			out.print(shortname);
 			typeParameters(out, c.getTypeParameters());
 			if (c.isInterface()) {
-				if (superclass != null && !superclass.equals("")) {
+				if (superclass != null && !superclass.equals("") && !superclass.equals("-")) {
 					out.print(" extends " + superclass);
 				}
 				out.print(" implements ");
@@ -908,9 +918,9 @@ public class AnnotatingClassDumper extends ClassDumper {
 			indent(out);
 			out.print("public ");
 			out.print(shortname);
-			out.print("(" + tokenClass + " arg0) {");
+			out.print("(" + tokenClass + " arg0){");
 			beginIndent();
-			if ((superclass != null && !superclass.equals("")) || !c.isInterface()) {
+			if ((superclass != null && !superclass.equals("") && !superclass.equals("-")) || !c.isInterface()) {
 				indent(out);
 				out.print("super(arg0);");
 			}
@@ -1040,7 +1050,7 @@ public class AnnotatingClassDumper extends ClassDumper {
 	private void dumpFieldValue(PrintStream out, Field field, Class<?> type) {	
 		if (type.equals(java.lang.String.class)) {
 			out.print("\"[field:");
-			out.print(field);
+			out.print(rf.restoreString(field.toString()));
 			out.print("]\"");
 		} else if (type.isArray()) {
 			Class<?> elt = type.getComponentType();
