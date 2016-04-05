@@ -5,6 +5,10 @@
 	<artifactId>matos-android-database</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<properties>
+		<matos.android.sdk>/opt/android-sdk-linux</matos.android.sdk>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.orange.matos</groupId>
@@ -28,9 +32,6 @@
 		</dependency>
 	</dependencies>
 
-	<properties>
-		<matos.android.sdk>/opt/android-sdk-linux_86</matos.android.sdk>
-	</properties>
 	<build>
 		<plugins>
 			<plugin>
