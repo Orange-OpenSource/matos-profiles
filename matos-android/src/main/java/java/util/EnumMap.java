@@ -24,6 +24,8 @@ package java.util;
 
 
 @com.francetelecom.rd.stubs.annotation.ClassDone(0)
+@com.francetelecom.rd.stubs.annotation.Field(value="value", type="V", modifier=java.lang.reflect.Modifier.PRIVATE)
+
 public class EnumMap<K extends java.lang.Enum, V>
   extends AbstractMap<K, V>  implements java.io.Serializable, java.lang.Cloneable, Map<K, V>
 {

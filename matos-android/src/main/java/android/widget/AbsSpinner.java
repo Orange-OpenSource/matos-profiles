@@ -24,6 +24,7 @@ package android.widget;
 
 
 @com.francetelecom.rd.stubs.annotation.ClassDone(0)
+@com.francetelecom.rd.stubs.annotation.Field(modifier = 4, type = "SpinnerAdapter", value = "adapter")
 public abstract class AbsSpinner
   extends AdapterView<SpinnerAdapter>{
   // Constructors

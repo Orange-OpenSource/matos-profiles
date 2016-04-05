@@ -24,6 +24,9 @@ package android.widget;
 
 
 @com.francetelecom.rd.stubs.annotation.ClassDone(0)
+// @com.francetelecom.rd.stubs.annotation.Field(modifier = 4, type = "ExpandableListAdapter", value = "expandableListAdapter")
+@com.francetelecom.rd.stubs.annotation.Field(modifier = 4, type = "ListAdapter", value = "listAdapter")
+// @com.francetelecom.rd.stubs.annotation.Code({"private ListAdapter listAdapter;", "private ExpandableListAdapter expandableListAdapter"}) 
 public class ExpandableListView
   extends ListView{
   // Classes

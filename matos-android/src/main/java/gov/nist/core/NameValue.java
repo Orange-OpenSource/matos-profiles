@@ -23,11 +23,11 @@ package gov.nist.core;
  */
 
 
+@com.francetelecom.rd.stubs.annotation.Field(value="value",type="java.lang.String", modifier= java.lang.reflect.Modifier.PRIVATE)
 public class NameValue
   extends GenericObject  implements java.util.Map.Entry<java.lang.String, java.lang.String>
 {
   // Fields
-
   protected boolean isQuotedString;
 
   protected final boolean isFlagParameter = false;
@@ -73,7 +73,7 @@ public class NameValue
   }
   public void setName(@com.francetelecom.rd.stubs.annotation.FieldSet("name") java.lang.String arg1){
   }
-  public java.lang.String setValue(@com.francetelecom.rd.stubs.annotation.FieldSet("value") java.lang.String arg1){
+  public java.lang.String setValue(@com.francetelecom.rd.stubs.annotation.FieldSet(value="value",type="-") java.lang.String arg1){
     return (java.lang.String) null;
   }
   public void setSeparator(java.lang.String arg1){

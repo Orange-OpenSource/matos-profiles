@@ -29,7 +29,9 @@ public class AccountManagerService
 {
   // Constructors
 
-  @com.francetelecom.rd.stubs.annotation.CallBackRegister("onCreate")
+//  @com.francetelecom.rd.stubs.annotation.CallBackRegister("onCreate")
+  @com.francetelecom.rd.stubs.annotation.Code("onServiceChanged(new AuthenticatorDescription(com.francetelecom.rd.stubs.Generator.token), com.francetelecom.rd.stubs.Generator.booleanValue());")
+
   public AccountManagerService(android.content.Context arg1){
     super();
   }

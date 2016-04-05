@@ -22,7 +22,7 @@ package java.util.concurrent;
  * #L%
  */
 
-
+@com.francetelecom.rd.stubs.annotation.Field(modifier = 4, type = "E", value = "content")
 public class DelayQueue<E extends Delayed>
   extends java.util.AbstractQueue<E>  implements BlockingQueue<E>
 {

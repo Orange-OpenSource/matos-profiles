@@ -24,6 +24,7 @@ package android.widget;
 
 
 @com.francetelecom.rd.stubs.annotation.ClassDone(0)
+@com.francetelecom.rd.stubs.annotation.Field(modifier = 4, type = "ListAdapter", value = "adapter")
 public class GridView
   extends AbsListView{
   // Fields
