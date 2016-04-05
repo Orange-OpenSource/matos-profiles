@@ -71,7 +71,7 @@
 									<arg value="-v" />
 									<arg value="haosp" />
 									<arg value="-jars" />
-									<arg value="${com.orange.matos:matos-android-ics:jar}" />
+									<arg value="${com.orange.matos:matos-android:jar}" />
 									<arg value="-db" />
 									<arg value="${project.build.directory}/database.db" />
 								</java>
